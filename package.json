@@ -1,7 +1,7 @@
 {
   "name": "scribd",
   "author": "Firejune (http://firejune.com/)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Scribd REST API binding for Node.JS",
   "homepage": "http://github.com/firejune/scribd",
   "keywords": [
@@ -25,7 +25,7 @@
     "type": "MIT",
     "url": "http://www.opensource.org/licenses/mit-license.php"
   }],
-  "devDependencies": {
+  "dependencies": {
     "mime": "1.2.x",
     "request": "2.12.x",
     "xml2json": "0.3.x"
