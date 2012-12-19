@@ -119,6 +119,11 @@ scribd.login(function(err, res) {
 scribd.signup(function(err, res) {
   console.log('\n scribd.signup', err, res);
 }, 'username', 'password', 'email', 'name');
+
+// user.getAutoSigninUrl (callback, [nextUrl])
+scribd.getAutoSigninUrl(function(err, res) {
+  console.log('\n scribd.getAutoSigninUrl', err, res);
+}, '/');
 `````
 Have fun!
 
