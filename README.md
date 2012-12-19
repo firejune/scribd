@@ -85,10 +85,15 @@ scribd.featured(function(err, res) {
   console.log('\n scribd.featured', err, res);
 });
 
-// docs.browse (callback, [limit], [offset], [categoryId], [scope])
+// docs.browse (callback, [limit], [offset], [categoryId], [sort])
 scribd.browse(function(err, res) {
   console.log('\n scribd.browse', err, res);
 });
+
+// docs.uploadThumb (callback, file, docId)
+scribd.uploadThumb(function(err, res) {
+  console.log('\n scribd.uploadThumb', err, res);
+}, 'thumbnail.path', 'docId');
 
 
 /**

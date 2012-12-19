@@ -15,7 +15,7 @@ var scribd = new Scribd(key, secret);
 // docs.upload (callback, file, [docType], [access], [revId])
 scribd.upload(function(err, res) {
   console.log('\n scribd.upload', err, res);
-}, './document.path');
+}, 'document.path');
 
 // docs.uploadFromUrl (callback, url, [docType], [access], [revId])
 scribd.uploadFromUrl(function(err, res) {
@@ -72,11 +72,15 @@ scribd.featured(function(err, res) {
   console.log('\n scribd.featured', err, res);
 });
 
-// docs.browse (callback, [limit], [offset], [categoryId], [scope])
+// docs.browse (callback, [limit], [offset], [categoryId], [sort])
 scribd.browse(function(err, res) {
   console.log('\n scribd.browse', err, res);
 });
 
+// docs.uploadThumb (callback, file, docId)
+scribd.uploadThumb(function(err, res) {
+  console.log('\n scribd.uploadThumb', err, res);
+}, 'thumbnail.path', 'docId');
 
 
 /**
