@@ -54,6 +54,16 @@ scribd.changeSettings(function(err, res) {
 
 
 /**
+ * Thumbnail Method
+ */
+
+// thumbnail.get (callback, docId, [width], [height])
+scribd.getThumbnail(function(err, res) {
+  console.log('\n scribd.getThumbnail', err, res);
+}, 'docId', 256);
+
+
+/**
  * User Method
  */
 
