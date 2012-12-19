@@ -66,7 +66,7 @@ scribd.getStats(function(err, res) {
 }, 'docId');
 
 // docs.delete (callback, docId)
-scribd.remove(function(err, res) {
+scribd.delete(function(err, res) {
   console.log('\n scribd.remove', err, res);
 }, 'docId');
 

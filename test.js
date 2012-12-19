@@ -53,8 +53,8 @@ scribd.getStats(function(err, res) {
 }, 'docId');
 
 // docs.delete (callback, docId)
-scribd.remove(function(err, res) {
-  console.log('\n scribd.remove', err, res);
+scribd.delete(function(err, res) {
+  console.log('\n scribd.delete', err, res);
 }, 'docId');
 
 // docs.search (callback, query, [numResults], [numStart], [scope])
