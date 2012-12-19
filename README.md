@@ -55,9 +55,14 @@ scribd.changeSettings(function(err, res) {
   console.log('\n scribd.changeSettings', err, res);
 }, 'docId', 'title');
 
-// docs.getDownloadUrl (callback, docId, [docType])
+// docs.getDownloadUrl (callback, docId)
 scribd.getDownloadUrl(function(err, res) {
   console.log('\n scribd.getDownloadUrl', err, res);
+}, 'docId');
+
+// docs.getStats (callback, docId)
+scribd.getStats(function(err, res) {
+  console.log('\n scribd.getStats', err, res);
 }, 'docId');
 
 // docs.delete (callback, docId)
