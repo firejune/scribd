@@ -106,3 +106,8 @@ scribd.login(function(err, res) {
 scribd.signup(function(err, res) {
   console.log('\n scribd.signup', err, res);
 }, 'username', 'password', 'account@email.com', 'name');
+
+// user.getAutoSigninUrl (callback, [nextUrl])
+scribd.getAutoSigninUrl(function(err, res) {
+  console.log('\n scribd.getAutoSigninUrl', err, res);
+}, '/');
