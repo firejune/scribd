@@ -80,6 +80,10 @@ scribd.getCategories(function(err, res) {
   console.log('\n scribd.getCategories', err, res);
 }, 'docId');
 
+// docs.featured (callback, [limit], [offset], [scope])
+scribd.featured(function(err, res) {
+  console.log('\n scribd.featured', err, res);
+});
 
 /**
  * Thumbnail Method
