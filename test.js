@@ -1,62 +1,68 @@
 var Scribd = require('./lib/scribd');
 
-var Scribd_api_key = "ENTER-YOUR-API-KEY-HERE";
-var Scribd_secret = "ENTER-YOUR-API-SECRET-HERE"; 
+var key = "ENTER-YOUR-API-KEY-HERE"
+  , secret = "ENTER-YOUR-API-SECRET-HERE";
 
-var scribd = new Scribd(Scribd_api_key, Scribd_secret);
+var scribd = new Scribd(key, secret);
 //var docId = '116661679';
 
 /* Scribd usages: */
 
-// callback, file, docType, access, revId
-scribd.upload(function(err, res) {
-  console.log('scribd.upload', err, res);
-}, './mswordfile.docx');
+/**
+ * Docs Method
+ */
 
-// callback, url, docType, access, revId
+// docs.upload (callback, file, [docType], [access], [revId])
+scribd.upload(function(err, res) {
+  console.log('\n scribd.upload', err, res);
+}, './document.path');
+
+// docs.uploadFromUrl (callback, url, [docType], [access], [revId])
 scribd.uploadFromUrl(function(err, res) {
-  console.log('scribd.uploadFromUrl', err, res);
+  console.log('\n scribd.uploadFromUrl', err, res);
 }, 'url');
 
-// callback, docId
+// docs.delete (callback, docId)
 scribd.remove(function(err, res) {
-  console.log('scribd.remove', err, res);
+  console.log('\n scribd.remove', err, res);
 }, 'docId');
 
-
-// callback, query, numResults, numStart, scope
+// docs.search (callback, query, [numResults], [numStart], [scope])
 scribd.search(function(err, res) {
-  console.log('\nscribd.search', err, res);
+  console.log('\n scribd.search', err, res);
 }, 'Node.JS', 1);
 
-// callback
+// docs.getList (callback)
 scribd.getList(function(err, res) {
-  console.log('\nscribd.getList', err, res);
+  console.log('\n scribd.getList', err, res);
 });
 
-
-// callback, docId
+// docs.getConversionStatus (callback, docId)
 scribd.getConversionStatus(function(err, res) {
-  console.log('\nscribd.getConversionStatus', err, res);
-}, docId);
+  console.log('\n scribd.getConversionStatus', err, res);
+}, 'docId');
 
-// callback, docId
+// docs.getSettings (callback, docId)
 scribd.getSettings(function(err, res) {
-  console.log('\nscribd.getSettings', err, res);
-}, docId);
+  console.log('\n scribd.getSettings', err, res);
+}, 'docId');
 
-// callback, docId, title, description, access, license, showAds, tags
+// docs.getSettings (callback, docId, [title], [description], [access], [license], [showAds], [tags])
 scribd.changeSettings(function(err, res) {
-  console.log('\nscribd.changeSettings', err, res);
+  console.log('\n scribd.changeSettings', err, res);
 }, 'docId', 'title');
 
 
-// callback, username, password
+/**
+ * User Method
+ */
+
+// user.login (callback, username, password)
 scribd.login(function(err, res) {
-  console.log('\nscribd.login', err, res);
+  console.log('\n scribd.login', err, res);
 }, 'username', 'password');
 
-// callback, username, password, email, name
+// user.signup (callback, username, password, email, [name])
 scribd.signup(function(err, res) {
-  console.log('scribd.signup', err, res);
+  console.log('\n scribd.signup', err, res);
 }, 'username', 'password', 'email', 'name');
