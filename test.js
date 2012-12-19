@@ -4,7 +4,7 @@ var key = "ENTER-YOUR-API-KEY-HERE"
   , secret = "ENTER-YOUR-API-SECRET-HERE";
 
 var scribd = new Scribd(key, secret);
-//var docId = '116661679';
+
 
 /* Scribd usages: */
 
@@ -65,4 +65,4 @@ scribd.login(function(err, res) {
 // user.signup (callback, username, password, email, [name])
 scribd.signup(function(err, res) {
   console.log('\n scribd.signup', err, res);
-}, 'username', 'password', 'email', 'name');
+}, 'username', 'password', 'account@email.com', 'name');

@@ -1,7 +1,7 @@
 {
   "name": "scribd",
   "author": "Firejune (http://firejune.com/)",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Scribd REST API binding for Node.JS",
   "homepage": "http://github.com/firejune/scribd",
   "keywords": [
@@ -28,7 +28,7 @@
   "dependencies": {
     "mime": "1.2.x",
     "request": "2.12.x",
-    "xml2json": "0.3.x"
+    "xml2js": "0.2.x"
   },
   "bugs" : {
     "url" : "http://github.com/firejune/scribd/issues"
