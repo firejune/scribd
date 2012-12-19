@@ -85,6 +85,12 @@ scribd.featured(function(err, res) {
   console.log('\n scribd.featured', err, res);
 });
 
+// docs.browse (callback, [limit], [offset], [categoryId], [scope])
+scribd.browse(function(err, res) {
+  console.log('\n scribd.browse', err, res);
+});
+
+
 /**
  * Thumbnail Method
  */
