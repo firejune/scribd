@@ -75,6 +75,11 @@ scribd.search(function(err, res) {
   console.log('\n scribd.search', err, res);
 }, 'Node.JS', 1);
 
+// docs.getCategories (callback, docId)
+scribd.getCategories(function(err, res) {
+  console.log('\n scribd.getCategories', err, res);
+}, 'docId');
+
 
 /**
  * Thumbnail Method
