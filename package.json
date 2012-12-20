@@ -1,34 +1,36 @@
 {
   "name": "scribd",
-  "author": "Firejune (http://firejune.com/)",
-  "version": "0.1.4",
+  "author": "Joon Kyoung, @firejune (http://firejune.com/)",
+  "version": "0.1.5",
   "description": "Scribd REST API binding for Node.JS",
   "homepage": "http://github.com/firejune/scribd",
   "keywords": [
-    "scribd",
-    "document",
-    "viewer",
-    "doc",
-    "pdf",
-    "ppt",
-    "xls"
+      "scribd"
+    , "document"
+    , "viewer"
+    , "thumbnail"
+    , "doc"
+    , "pdf"
+    , "ppt"
+    , "xls"
   ],
   "main": "lib/scribd",
   "directories": {
     "lib": "lib"
   },
   "repository": {
-    "type": "git",
-    "url": "git://github.com/firejune/scribd.git"
+      "type": "git"
+    , "url": "git://github.com/firejune/scribd.git"
   },
   "licenses": [{
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
+      "type": "MIT"
+    , "url": "http://firejune.mit-license.org/"
   }],
   "dependencies": {
-    "mime": "1.2.x",
-    "request": "2.12.x",
-    "xml2js": "0.2.x"
+      "mime": "1.2.x"
+    , "request": "2.12.x"
+    , "xml2js": "0.2.x"
+    , "clog": "0.1.x"
   },
   "bugs" : {
     "url" : "http://github.com/firejune/scribd/issues"
