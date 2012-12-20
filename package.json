@@ -1,7 +1,7 @@
 {
   "name": "scribd",
   "author": "Joon Kyoung, @firejune (http://firejune.com/)",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Scribd REST API binding for Node.JS",
   "homepage": "http://github.com/firejune/scribd",
   "keywords": [
