@@ -21,7 +21,7 @@ var key = "ENTER-YOUR-API-KEY-HERE"
 
 var scribd = new Scribd(key, secret);
 
-// or (> 0.1.4)
+// or (>= 0.1.5)
 
 var scribd = new Scribd({
     apikey: key
@@ -37,7 +37,7 @@ scribd.upload(function(err, res) {
   console.log("\n scribd.upload", err, res);
 }, "./my.docx", "doc", "private");
 
-// or (> 0.1.4)
+// or (>= 0.1.5)
 
 scribd.upload({
     file: "./my.docx"
