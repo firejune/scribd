@@ -62,10 +62,10 @@ scribd.search(function(err, res) {
   console.log('\n scribd.search', err, res);
 }, 'Node.JS', 1);
 
-// docs.getCategories (callback, docId)
+// docs.getCategories (callback, [categoryId], [withSubcategories])
 scribd.getCategories(function(err, res) {
   console.log('\n scribd.getCategories', err, res);
-}, 'docId');
+});
 
 // docs.featured (callback, [limit], [offset], [scope])
 scribd.featured(function(err, res) {
