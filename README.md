@@ -40,7 +40,7 @@ scribd.upload(function(err, res) {
 // or (> 0.1.4)
 
 scribd.upload({
-  , file: "./my.docx"
+    file: "./my.docx"
   , docType: "doc"
   , access: "private"
 }, function(err, res) {
