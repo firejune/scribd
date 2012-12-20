@@ -21,6 +21,35 @@ var key = "ENTER-YOUR-API-KEY-HERE"
 
 var scribd = new Scribd(key, secret);
 
+// or (> 0.1.4)
+
+var scribd = new Scribd({
+    apikey: key
+  , secret: secret
+});
+
+
+/**
+ * docs.upload
+ */
+
+scribd.upload(function(err, res) {
+  console.log("\n scribd.upload", err, res);
+}, "./my.docx", "doc", "private");
+
+// or (> 0.1.4)
+
+scribd.upload({
+  , file: "./my.docx"
+  , docType: "doc"
+  , access: "private"
+}, function(err, res) {
+  console.log("\n scribd.upload", err, res);
+});
+`````
+
+### Methods
+`````javascript
 /**
  * Docs Method
  */
