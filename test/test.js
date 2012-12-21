@@ -1,3 +1,11 @@
+/*!
+ * Scribd - Platform API Test
+ *
+ * Copyright(c) 2012 Joon Kyoung, @firejune <to@firejune.com>
+ * MIT Licensed
+ */
+
+
 var Scribd = require('../index')
   , methods = require('../lib/methods')
   , clog = require('clog');
@@ -31,6 +39,7 @@ var key = "ENTER-YOUR-API-KEY-HERE"
         if (r.secret_password) params.secretPassword = r.secret_password;
         params.access = null;
         params.docType = 'pdf';
+        params.file = './test.jpg';
         return r.doc_id && r.access_key && r.secret_password;
       },
       "uploadFromUrl": function(r) {
@@ -132,7 +141,7 @@ function run() {
       })
     , callback = function(err, res) {
       if (err) {
-        clog.error(res && res.code || res);
+        clog.error(res && res.code || 'unknown', res && res.message || res);
         failure++;
       } else {
         if (test.ok(res)) {
@@ -147,7 +156,7 @@ function run() {
       if (units.length) {
         run();
       } else {
-        scribd.delete(function() {
+        scribd.delete(function(err, res) {
           clog('Test finished', 'success ' + success + ', failure ' + failure);
         }, params.docId);
       }
