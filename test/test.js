@@ -3,7 +3,7 @@ var Scribd = require('../index')
   , clog = require('clog');
 
 var key = "ENTER-YOUR-API-KEY-HERE"
-  , secret = "ENTER-YOUR-API-SECRET-HERE";
+  , secret = "ENTER-YOUR-API-SECRET-HERE"
   , scribd = new Scribd(key, secret, {debug: false})
 
   , failure = 0
@@ -126,16 +126,16 @@ units.reverse();
 run();
 
 function run() {
-  var unit = units.pop()
-    , args = unit.args.split(',').map(function(arg) {
-        return params[arg = arg.trim()] || null;
+  var test = units.pop()
+    , args = test.args.split(',').map(function(arg) {
+        return params[arg.trim()] || null;
       })
     , callback = function(err, res) {
       if (err) {
         clog.error(res && res.code || res);
         failure++;
       } else {
-        if (unit.ok(res)) {
+        if (test.ok(res)) {
           clog.info('ok');
           success++;
         } else {
@@ -153,6 +153,6 @@ function run() {
       }
     };
 
-  clog('Test', 'scribd.' + unit.model + '.' + unit.method, args);
-  scribd[unit.model][unit.method].apply(scribd, [callback].concat(args));
+  clog('Test', 'scribd.' + test.model + '.' + test.method, args);
+  scribd[test.model][test.method].apply(scribd, [callback].concat(args));
 }
