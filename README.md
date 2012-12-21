@@ -1,6 +1,6 @@
 # scribd
 
-Scribd REST API binding for Node.JS.
+Scribd Platform API binding for Node.JS.
 
 ### Installing
 
