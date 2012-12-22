@@ -69,7 +69,6 @@ var key = "ENTER-YOUR-API-KEY-HERE"
       return "string" == typeof r;
     },
     "docs.getStats": function(r) {
-      params.docId = params._docId;
       return r && r.reads != undefined;
     },
     "docs.delete": function(r) {
@@ -127,12 +126,23 @@ Object.keys(tests).forEach(function(key) {
 
 });
 
+/*
+var docUpload = scribd.upload({
+    file: params.file
+  , access: params.access
+}, function(err, res) {
+  console.log("\n scribd.upload", err, res);
+});
 
-units.reverse();
-run();
+docUpload.on('complete', function(res, xml) {
+  console.log("\n scribd.upload complete", xml);
+});
+*/
 
 
-function run() {
+run(units.reverse());
+
+function run(units) {
   var test = units.pop()
     , args = test.args.split(',').map(function(arg) {
         return params[arg.trim()] || null;
@@ -141,18 +151,18 @@ function run() {
       if (err) {
         clog.error(res && res.code || 'unknown', res && res.message || res);
         failure++;
-      } else {
-        if (test.ok(res)) {
-          clog.info('ok');
-          success++;
-        } else {
-          clog.warn('not ok', res);
-          failure++;
-        }
+      }
+
+      if (test.ok(res)) {
+        clog.info('ok');
+        success++;
+      } else if(!err) {
+        clog.warn('not ok', res);
+        failure++;
       }
 
       if (units.length) {
-        run();
+        run(units);
       } else {
         scribd.delete(function(err, res) {
           clog('Test finished', 'success ' + success + ', failure ' + failure);
