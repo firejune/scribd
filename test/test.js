@@ -139,6 +139,9 @@ docUpload.on('complete', function(res, xml) {
 });
 */
 
+scribd.on('conversion', function(err, res) {
+  clog.info('conversion event', err, res);
+});
 
 run(units.reverse());
 
