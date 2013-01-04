@@ -126,19 +126,6 @@ Object.keys(tests).forEach(function(key) {
 
 });
 
-/*
-var docUpload = scribd.upload({
-    file: params.file
-  , access: params.access
-}, function(err, res) {
-  console.log("\n scribd.upload", err, res);
-});
-
-docUpload.on('complete', function(res, xml) {
-  console.log("\n scribd.upload complete", xml);
-});
-*/
-
 scribd.on('conversion', function(err, res) {
   clog('conversion event', err, res);
 });

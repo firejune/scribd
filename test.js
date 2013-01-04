@@ -5,8 +5,12 @@ var key = "ENTER-YOUR-API-KEY-HERE"
 
 var scribd = new Scribd(key, secret);
 
-
 /* Scribd usages: */
+
+// on conversion callback
+scribd.on('conversion', function(err, res) {
+  clog('conversion event', err, res);
+});
 
 /**
  * Docs Method

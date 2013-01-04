@@ -46,6 +46,11 @@ scribd.upload({
 }, function(err, res) {
   console.log("\n scribd.upload", err, res);
 });
+
+// on conversion event(> 0.1.8)
+scribd.on('conversion', function(err, res) {
+  clog('conversion event', err, res);
+});
 `````
 
 ### Methods
